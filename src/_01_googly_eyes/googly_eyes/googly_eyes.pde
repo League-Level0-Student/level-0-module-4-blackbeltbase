@@ -1,8 +1,8 @@
   PImage face;
   int pupilX = 400;
 int pupilY = 300;
-int topY = 315;
-int bottomY = 335;
+int topY = 310;
+int bottomY = 350;
 int rightX = 290;
 int leftX = 210;
 void setup() {
@@ -15,22 +15,37 @@ void setup() {
 void draw() {
 
     background(face);
-if(mouseX>=leftX && mouseX <= rightX && mouseY >= topY && mouseY <= bottomY){
+    if(mousePressed){
+      println(mouseX +" "+ mouseY);}
+if(mouseX>=leftX && mouseX <= rightX) {
   pupilX = mouseX;
-  pupilY = mouseY;
 }
-else if(mouseY <topY){
-  pupilY = topY;
+if( mouseY >= topY && mouseY <= bottomY){
+ pupilY = mouseY ;
 }
-else if(mouseY> bottomY){
- pupilY = bottomY; 
-}
-else if(mouseX <leftX){
+//else if(mouseY <=topY && mouseX >= rightX){
+//  pupilY = topY;
+//  //pupilX = mouseX;
+//}
+//else if(mouseY>= bottomY && mouseX <= leftX){
+// pupilY = bottomY; 
+////pupilX = mouseX;
+//}
+if(mouseX <=leftX){
  pupilX = leftX; 
 }
-else if(mouseX > rightX){
+if(mouseX >= rightX){
  pupilX =rightX; 
 }
+if(mouseY>= bottomY){
+ pupilY = bottomY; 
+//pupilX = mouseX;
+}
+if(mouseY <=topY){
+  pupilY = topY;
+  //pupilX = mouseX;
+}
+
 
     fill(#FFFFFF);
   ellipse(250,330,80,50);
