@@ -22,8 +22,6 @@ woohooSound = minim.loadSample("homer-woohoo.wav");
 
 void draw() {
  background(donkey);
-  rect(0,0,30,30);
- rect(454,75,40,40);
  if(dist(0,0,mouseX,mouseY)<30){
     }
     else{
@@ -37,9 +35,12 @@ void draw() {
  }
  if(isStuck){
   image(tail, stuckX, stuckY);
- }
+ 
   if(dist(454, 75, stuckX, stuckY) < 30){
 playWin();
+background(donkey);
+  image(tail, stuckX, stuckY);
+ }
  }
 }
 
